@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metadatos y configuración del documento -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica HTML, CSS y JS</title>
+
+    <!-- Vinculación con el archivo CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Cabecera -->
+        <header>
+            <h1>Práctica de HTML, CSS y JS</h1>
+            <p>Modifica el código y observa los resultados en tiempo real.</p>
+        </header>
+
+        <!-- Panel de personalización (controles) -->
+        <div class="customization">
+            <label for="bg-color">Color de fondo:</label>
+            <input type="color" id="bg-color" value="#f4f7f6">
+
+            <label for="font-size">Tamaño de fuente:</label>
+            <input type="range" id="font-size" min="12" max="30" value="16">
+            <span id="font-size-value">16px</span>
+        </div>
+
+        <!-- Botón para ejecutar el código -->
+        <button id="run-btn">Ejecutar Código</button>
+
+        <!-- Botón e imagen de actividad en clase -->
+        <button id="show-image-btn">Actividad en clase</button>
+        <div id="image-preview" style="display: none; margin-top: 10px;">
+            <img id="class-image" src="img/tarea1.png" alt="Actividad en clase" style="max-width: 100%; height: auto;">
+
+        </div>
+
+        <!-- Sección de contenido: Previsualización y edición de código -->
+        <div class="content">
+            <!-- Vista previa del resultado -->
+            <section class="output">
+                <h2>Vista Previa:</h2>
+                <iframe id="output-frame" width="100%" height="400"></iframe>
+            </section>
+
+            <!-- Editor de código (HTML, CSS, JS) -->
+            <section class="code-editor">
+                <!-- Editor HTML -->
+                <div class="editor">
+                    <h2>HTML</h2>
+                    <textarea id="html-code" placeholder="Escribe tu código HTML aquí..."></textarea>
+                </div>
+                <!-- Editor CSS -->
+                <div class="editor">
+                    <h2>CSS</h2>
+                    <textarea id="css-code" placeholder="Escribe tu código CSS aquí..."></textarea>
+                </div>
+                <!-- Editor JS -->
+                <div class="editor">
+                    <h2>JS</h2>
+                    <textarea id="js-code" placeholder="Escribe tu código JavaScript aquí..."></textarea>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>Hecho por <strong>JMVC</strong></p>
+    </footer>
+
+    <!-- Vinculación con el archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
