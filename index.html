@@ -2,79 +2,132 @@
 <html lang="es">
 
 <head>
-    <!-- Metadatos y configuración del documento -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica HTML, CSS y JS</title>
-
-    <!-- Vinculación con el archivo CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Añado FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Contenedor principal -->
     <div class="container">
-        <!-- Cabecera -->
         <header>
-            <h1>Práctica de HTML, CSS y JS</h1>
-            <p>Modifica el código y observa los resultados en tiempo real.</p>
+            <h1><i class="fas fa-laptop-code"></i> Práctica de HTML, CSS y JS</h1>
+            <p>¡Explora y diviértete creando tu primera página web!</p>
         </header>
 
-        <!-- Panel de personalización (controles) -->
         <div class="customization">
-            <label for="bg-color">Color de fondo:</label>
-            <input type="color" id="bg-color" value="#f4f7f6">
+            <label for="bg-color"><i class="fas fa-fill-drip"></i> Color de fondo:</label>
+            <input type="color" id="bg-color" value="#f0f8ff">
 
-            <label for="font-size">Tamaño de fuente:</label>
-            <input type="range" id="font-size" min="12" max="30" value="16">
-            <span id="font-size-value">16px</span>
+            <label for="font-size"><i class="fas fa-text-height"></i> Tamaño de fuente:</label>
+            <input type="range" id="font-size" min="12" max="24" value="14">
+            <span id="font-size-value">14px</span>
         </div>
 
-        <!-- Botón para ejecutar el código -->
-        <button id="run-btn">Ejecutar Código</button>
-
-        <!-- Botón e imagen de actividad en clase -->
-        <button id="show-image-btn">Actividad en clase</button>
-        <div id="image-preview" style="display: none; margin-top: 10px;">
-            <img id="class-image" src="img/tarea1.png" alt="Actividad en clase" style="max-width: 100%; height: auto;">
-
+        <div class="button-container">
+            <button id="run-btn"><i class="fas fa-play"></i> Ejecutar Código</button>
+            <button id="show-image-btn"><i class="fas fa-image"></i> Ver Actividad</button>
         </div>
 
-        <!-- Sección de contenido: Previsualización y edición de código -->
+        <div id="image-preview" style="display: none;">
+            <h3 style="margin-bottom: 10px; color: #ff9800;"><i class="fas fa-info-circle"></i> Actividad a realizar:</h3>
+            <img id="class-image" src="img/tarea1.png" alt="Imagen de la actividad a realizar: recrear una página web usando HTML, CSS y JavaScript.">
+            <p style="margin-top: 10px; color: #666; font-style: italic;">Sigue las instrucciones y trata de recrear esta página web usando HTML, CSS y JavaScript.</p>
+        </div>
+
         <div class="content">
-            <!-- Vista previa del resultado -->
-            <section class="output">
-                <h2>Vista Previa:</h2>
-                <iframe id="output-frame" width="100%" height="400"></iframe>
+            <section class="output-container">
+                <div class="output-section">
+                    <div class="output-header">
+                        <i class="fas fa-desktop"></i> Vista Previa
+                        <div class="tooltip" role="tooltip" aria-label="Aquí verás cómo se ve tu página web en tiempo real.">
+                            <i class="fas fa-question-circle"></i>
+                            <span class="tooltiptext">Aquí verás cómo se ve tu página web en tiempo real.</span>
+                            <
+                        </div>
+                        
+                    </div>
+                    <iframe id="output-frame" aria-label="Vista previa de la página web"></iframe>
+                 
+                </div>
             </section>
 
-            <!-- Editor de código (HTML, CSS, JS) -->
-            <section class="code-editor">
-                <!-- Editor HTML -->
+            <section class="editors-container">
                 <div class="editor">
-                    <h2>HTML</h2>
-                    <textarea id="html-code" placeholder="Escribe tu código HTML aquí..."></textarea>
+                    <div class="editor-header html-header">
+                        <div>
+                            <i class="fab fa-html5"></i> HTML
+                            <div class="tooltip" role="tooltip" aria-label="Estructura básica de tu página web.">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltiptext">Estructura básica de tu página web.</span>
+                            </div>
+                        </div>
+                        <span>index.html</span>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers" id="html-line-numbers">1</div>
+                        <textarea id="html-code" class="editor-area" placeholder="Escribe tu código HTML aquí... 
+Ejemplo:
+<html>
+<head>
+...">
+</textarea>
+                    </div>
                 </div>
-                <!-- Editor CSS -->
                 <div class="editor">
-                    <h2>CSS</h2>
-                    <textarea id="css-code" placeholder="Escribe tu código CSS aquí..."></textarea>
+                    <div class="editor-header css-header">
+                        <div>
+                            <i class="fab fa-css3-alt"></i> CSS
+                            <div class="tooltip" role="tooltip" aria-label="Estilos para que tu página web se vea bonita.">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltiptext">Estilos para que tu página web se vea bonita.</span>
+                            </div>
+                        </div>
+                        <span>styles.css</span>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers" id="css-line-numbers">1</div>
+                        <textarea id="css-code" class="editor-area" placeholder="Escribe tu código CSS aquí... 
+Ejemplo:
+h1 {
+    color: navy;
+    text-align: center;
+}"></textarea>
+                    </div>
                 </div>
-                <!-- Editor JS -->
                 <div class="editor">
-                    <h2>JS</h2>
-                    <textarea id="js-code" placeholder="Escribe tu código JavaScript aquí..."></textarea>
+                    <div class="editor-header js-header">
+                        <div>
+                            <i class="fab fa-js"></i> JavaScript
+                            <div class="tooltip" role="tooltip" aria-label="Añade interactividad a tu página web.">
+                                <i class="fas fa-question-circle"></i>
+                                <span class="tooltiptext">Añade interactividad a tu página web.</span>
+                            </div>
+                        </div>
+                        <span>script.js</span>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers" id="js-line-numbers">1</div>
+                        <textarea id="js-code" class="editor-area" placeholder="Escribe tu código JavaScript aquí... 
+Ejemplo:
+document.addEventListener('DOMContentLoaded', function() {
+    // Código aquí
+});">
+</textarea>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
 
-    <!-- Pie de página -->
     <footer class="footer">
-        <p>Hecho por <strong>JMVC</strong></p>
+        <p><i class="fas fa-code"></i> Hecho con <i class="fas fa-heart" style="color: red;"></i> por
+            <strong>JMVC</strong>
+        </p>
     </footer>
 
-    <!-- Vinculación con el archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 

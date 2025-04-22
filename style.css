@@ -1,269 +1,307 @@
-/* ================================
-   Reset global
-================================== */
+/* RESET Y ESTILOS GENERALES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ================================
-   Estilo base
-================================== */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #DCE5DC;
+    background-color: #f0f8ff;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, rgba(255, 99, 132, 0.3), rgba(54, 162, 235, 0.3), rgba(255, 159, 64, 0.3));
 }
 
-/* ================================
-   Contenedor principal
-================================== */
+/* CONTAINER */
 .container {
-    width: 100%;
-    max-width: 1400px;
-    background-color: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-/* ================================
-   Cabecera
-================================== */
+/* HEADER */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    background-color: #4b8bf4;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 2.8em;
-    color: #4CAF50;
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* PERSONALIZACIÓN */
+.customization {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENEDOR DE BOTONES */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    
+    
+}
+
+/* BOTONES */
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#run-btn {
+    background-color: #4CAF50;
+    color: white;
+   
+}
+
+#run-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+   
+}
+
+#show-image-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+#show-image-btn:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+button i {
+    font-size: 18px;
+}
+
+/* CONTENIDO PRINCIPAL */
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* SECCIÓN DE RESULTADOS */
+.output-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.output-section {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.output-header {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#output-frame {
+    width: 100%;
+    height: 400px;
+    border: none;
+    background-color: white;
+}
+
+/* PREVISUALIZACIÓN DE IMAGEN */
+#image-preview {
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+#class-image {
+    max-width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #f0f0f0;
+}
+
+/* EDICIÓN DE CÓDIGO */
+.editors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editor {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.editor-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
     font-weight: bold;
 }
 
-h2 {
-    color: #444;
-    margin-bottom: 15px;
-    font-size: 1.3em;
+.html-header {
+    background-color: #E44D26; /* Color HTML5 */
 }
 
-p {
-    font-size: 1.1em;
-    color: #777;
+.css-header {
+    background-color: #264de4; /* Color CSS3 */
 }
 
-/* ================================
-   Panel de personalización
-================================== */
-.customization {
+.js-header {
+    background-color: #F0DB4F; /* Color JavaScript */
+    color: #323330;
+}
+
+.editor-content {
     display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+    background-color: #1e1e1e;
+    min-height: 150px;
 }
 
-/* ================================
-   Editor de código
-================================== */
-.editor {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-    width: 100%;
+/* NÚMEROS DE LÍNEAS EN EL EDITOR */
+.line-numbers {
+    padding: 10px 8px;
+    color: #858585;
+    background-color: #252526;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid #333;
+    min-width: 40px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    line-height: 1.5;
 }
 
-/* ================================
-   Áreas de texto (HTML, CSS, JS)
-================================== */
-textarea {
-    width: 100%;
-    height: 120px;
-    padding: 12px;
-    margin-top: 12px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Courier New', monospace;
-    font-size: 15px;
-    resize: vertical;
-    overflow-y: auto;
-}
-
-/* Diferenciación de áreas de código */
-#html-code, #css-code, #js-code {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#html-code { border-left: 4px solid #FF6347; }
-#css-code { border-left: 4px solid #4682B4; }
-#js-code { border-left: 4px solid #FFA500; }
-
-/* Estilo para el foco en las áreas de texto */
-textarea:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
-/* ================================
-   Previsualización
-================================== */
-.output {
-    flex: 1;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    min-height: 350px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-}
-
-/* ================================
-   Botón principal
-================================== */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 20px;
+.editor-area {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
+    resize: vertical;
     width: 100%;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* ================================
-   Efecto hover en el botón principal
-================================== */
-button:hover {
-    background-color: #50b854; /* Color más oscuro al pasar el mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transform: none;
-}
-
-/* ================================
-   Pie de página
-================================== */
-.footer {
-    width: 100%;
-    text-align: center;
+    min-height: 150px;
+    outline: none;
+    font-family: 'Consolas', 'Courier New', monospace;
     font-size: 14px;
-    color: #777;
-    margin-top: 50px;
+    line-height: 1.5;
 }
 
-.footer p {
-    margin: 0;
+/* PIE DE PÁGINA */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    color: #444;
+    background-color: #e8f4ff;
+    border-radius: 10px;
+    font-weight: 500;
 }
 
-.footer strong {
-    color: #4CAF50;
+/* ÍCONOS PARA LOS BOTONES Y ENCABEZADOS */
+.icon {
+    font-size: 18px;
+    margin-right: 10x;
+
 }
 
-/* ================================
-   Media Queries
-================================== */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
 
-    h1 {
-        font-size: 2em;
-    }
+/* TOOLTIP DE AYUDA */
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 5px;
+}
 
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ESTILOS RESPONSIVOS */
+@media (max-width: 767px) {
     .customization {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
     }
 
-    textarea {
-        height: 250px;
-        font-size: 14px;
+    .editor-area {
+        font-size: 12px;
+    }
+
+    #output-frame {
+        height: 300px;
     }
 
     button {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
+        width: 100%;
+        justify-content: center;
     }
 
-    h1 {
-        font-size: 1.8em;
+    .button-container {
+        width: 100%;
     }
-
-    textarea {
-        font-size: 12px;
-    }
-}
-
-/* ================================
-   Estilos para el botón "Actividad en clase"
-================================== */
-#show-image-btn {
-    background-color: #1a73e8;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-top: 20px;
-}
-
-/* ================================
-   Efecto hover en el botón "Actividad en clase"
-================================== */
-#show-image-btn:hover {
-    background-color: #3181e9; /* Color más oscuro al pasar el mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transform: none;
-}
-
-/* ================================
-   Estilos para la imagen de actividad
-================================== */
-#image-preview {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    transform: scale(0.9);
-}
-
-#image-preview.show {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* ================================
-   Sombra y hover en la imagen
-================================== */
-#class-image {
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-#class-image:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
