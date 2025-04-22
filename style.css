@@ -54,8 +54,6 @@ header h1 {
     gap: 10px;
     margin-bottom: 15px;
     flex-wrap: wrap;
-    
-    
 }
 
 /* BOTONES */
@@ -76,13 +74,11 @@ button {
 #run-btn {
     background-color: #4CAF50;
     color: white;
-   
 }
 
 #run-btn:hover {
     background-color: #45a049;
     transform: translateY(-2px);
-   
 }
 
 #show-image-btn {
@@ -169,7 +165,7 @@ button i {
 
 .editor {
     border-radius: 10px;
-    overflow: hidden;
+    overflow: hidden;  /* Esto asegura que no haya barras de desplazamiento en el contenedor */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -199,6 +195,7 @@ button i {
     display: flex;
     background-color: #1e1e1e;
     min-height: 150px;
+    overflow: hidden;  /* Esto elimina la barra de desplazamiento */
 }
 
 /* NÚMEROS DE LÍNEAS EN EL EDITOR */
@@ -212,6 +209,8 @@ button i {
     min-width: 40px;
     font-family: 'Consolas', 'Courier New', monospace;
     line-height: 1.5;
+    font-size: 14px;  /* Asegura que el tamaño de letra de los números sea el mismo que el código */
+    overflow: hidden;  /* Esto elimina cualquier barra de desplazamiento del área de números de línea */
 }
 
 .editor-area {
@@ -220,13 +219,14 @@ button i {
     background-color: #1e1e1e;
     color: #d4d4d4;
     border: none;
-    resize: vertical;
     width: 100%;
     min-height: 150px;
     outline: none;
     font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 14px;
+    font-size: 14px;  /* Tamaño de letra del código */
     line-height: 1.5;
+    overflow: hidden;  /* Esto asegura que no haya barras de desplazamiento */
+    resize: none; /* Esto elimina el control para redimensionar */
 }
 
 /* PIE DE PÁGINA */
@@ -243,10 +243,8 @@ button i {
 /* ÍCONOS PARA LOS BOTONES Y ENCABEZADOS */
 .icon {
     font-size: 18px;
-    margin-right: 10x;
-
+    margin-right: 10px;
 }
-
 
 /* TOOLTIP DE AYUDA */
 .tooltip {
@@ -255,7 +253,6 @@ button i {
     cursor: pointer;
     margin-left: 5px;
 }
-
 
 .tooltip .tooltiptext {
     visibility: hidden;
