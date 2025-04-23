@@ -20,21 +20,121 @@
         <div class="customization">
             <label for="bg-color"><i class="fas fa-fill-drip"></i> Color de fondo:</label>
             <input type="color" id="bg-color" value="#f0f8ff">
-
-            <label for="font-size"><i class="fas fa-text-height"></i> Tamaño de fuente:</label>
-            <input type="range" id="font-size" min="12" max="24" value="14">
-            <span id="font-size-value">14px</span>
         </div>
 
         <div class="button-container">
             <button id="run-btn"><i class="fas fa-play"></i> Ejecutar Código</button>
             <button id="show-image-btn"><i class="fas fa-image"></i> Ver Actividad</button>
+            <button id="show-colors-btn"><i class="fas fa-palette"></i> Colores</button>
         </div>
 
         <div id="image-preview" style="display: none;">
-            <h3 style="margin-bottom: 10px; color: #ff9800;"><i class="fas fa-info-circle"></i> Actividad a realizar:</h3>
-            <img id="class-image" src="img/tarea1.png" alt="Imagen de la actividad a realizar: recrear una página web usando HTML, CSS y JavaScript.">
-            <p style="margin-top: 10px; color: #666; font-style: italic;">Sigue las instrucciones y trata de recrear esta página web usando HTML, CSS y JavaScript.</p>
+            <h3 style="margin-bottom: 10px; color: #ff9800;"><i class="fas fa-info-circle"></i> Actividad a realizar:
+            </h3>
+            <img id="class-image" src="img/tarea1.png"
+                alt="Imagen de la actividad a realizar: recrear una página web usando HTML, CSS y JavaScript.">
+            <p style="margin-top: 10px; color: #666; font-style: italic;">Sigue las instrucciones y trata de recrear
+                esta página web usando HTML, CSS y JavaScript.</p>
+        </div>
+
+        <div id="color-bar" style="display: none;">
+            <h3>Colores en inglés:</h3>
+            <div class="color-bar" id="color-bar">
+                <div class="color-swatch" style="background-color: red;">
+                    <span>Red</span>
+                </div>
+                <div class="color-swatch" style="background-color: blue;">
+                    <span>Blue</span>
+                </div>
+                <div class="color-swatch" style="background-color: green;">
+                    <span>Green</span>
+                </div>
+                <div class="color-swatch" style="background-color: yellow;">
+                    <span>Yellow</span>
+                </div>
+                <div class="color-swatch" style="background-color: pink;">
+                    <span>Pink</span>
+                </div>
+                <div class="color-swatch" style="background-color: orange;">
+                    <span>Orange</span>
+                </div>
+                <div class="color-swatch" style="background-color: purple;">
+                    <span>Purple</span>
+                </div>
+                <div class="color-swatch" style="background-color: black; color: white;">
+                    <span>Black</span>
+                </div>
+                <div class="color-swatch" style="background-color: white; color: black;">
+                    <span>White</span>
+                </div>
+                <div class="color-swatch" style="background-color: gray;">
+                    <span>Gray</span>
+                </div>
+                <div class="color-swatch" style="background-color: brown;">
+                    <span>Brown</span>
+                </div>
+                <div class="color-swatch" style="background-color: cyan;">
+                    <span>Cyan</span>
+                </div>
+                <div class="color-swatch" style="background-color: magenta;">
+                    <span>Magenta</span>
+                </div>
+                <div class="color-swatch" style="background-color: lime;">
+                    <span>Lime</span>
+                </div>
+                <div class="color-swatch" style="background-color: teal;">
+                    <span>Teal</span>
+                </div>
+                <div class="color-swatch" style="background-color: navy;">
+                    <span>Navy</span>
+                </div>
+                <div class="color-swatch" style="background-color: indigo;">
+                    <span>Indigo</span>
+                </div>
+                <div class="color-swatch" style="background-color: violet;">
+                    <span>Violet</span>
+                </div>
+                <div class="color-swatch" style="background-color: gold;">
+                    <span>Gold</span>
+                </div>
+                <div class="color-swatch" style="background-color: silver;">
+                    <span>Silver</span>
+                </div>
+                <div class="color-swatch" style="background-color: coral;">
+                    <span>Coral</span>
+                </div>
+                <div class="color-swatch" style="background-color: peachpuff;">
+                    <span>Peach Puff</span>
+                </div>
+                <div class="color-swatch" style="background-color: lightblue;">
+                    <span>Light Blue</span>
+                </div>
+                <div class="color-swatch" style="background-color: lightgreen;">
+                    <span>Light Green</span>
+                </div>
+                <div class="color-swatch" style="background-color: lavender;">
+                    <span>Lavender</span>
+                </div>
+                <div class="color-swatch" style="background-color: mintcream;">
+                    <span>Mint Cream</span>
+                </div>
+                <div class="color-swatch" style="background-color: skyblue;">
+                    <span>Sky Blue</span>
+                </div>
+                <div class="color-swatch" style="background-color: salmon;">
+                    <span>Salmon</span>
+                </div>
+                <div class="color-swatch" style="background-color: darkgreen;">
+                    <span>Dark Green</span>
+                </div>
+                <div class="color-swatch" style="background-color: crimson;">
+                    <span>Crimson</span>
+                </div>
+                <div class="color-swatch" style="background-color: steelblue;">
+                    <span>Steel Blue</span>
+                </div>
+
+            </div>
         </div>
 
         <div class="content">
@@ -42,8 +142,8 @@
                 <div class="output-section">
                     <div class="output-header">
                         <i class="fas fa-desktop"></i> Vista Previa
-                        <div class="tooltip" role="tooltip" aria-label="Aquí verás cómo se ve tu página web en tiempo real.">
-                            <i class="fas fa-question-circle"></i>
+                        <div class="tooltip" role="tooltip"
+                            aria-label="Aquí verás cómo se ve tu página web en tiempo real.">
                             <span class="tooltiptext">Aquí verás cómo se ve tu página web en tiempo real.</span>
                         </div>
                     </div>
@@ -56,62 +156,60 @@
                     <div class="editor-header html-header">
                         <div>
                             <i class="fab fa-html5"></i> HTML
-                            <div class="tooltip" role="tooltip" aria-label="Estructura básica de tu página web.">
+                            <!-- Tooltip de ayuda para HTML -->
+                            <div class="tooltip" role="tooltip"
+                                aria-label="HTML es la estructura básica de la página web. Aquí defines los elementos y el contenido visible.">
                                 <i class="fas fa-question-circle"></i>
-                                <span class="tooltiptext">Estructura básica de tu página web.</span>
+                                <span class="tooltiptext">HTML es la estructura básica de la página web. Aquí defines
+                                    los elementos y el contenido visible.</span>
                             </div>
                         </div>
                         <span>index.html</span>
                     </div>
                     <div class="editor-content">
                         <div class="line-numbers" id="html-line-numbers">1</div>
-                        <textarea id="html-code" class="editor-area" placeholder="Escribe tu código HTML aquí... 
-Ejemplo:
-<html>
-<head>
-..."></textarea>
+                        <textarea id="html-code" class="editor-area"
+                            placeholder="Escribe tu código HTML aquí..."></textarea>
                     </div>
                 </div>
                 <div class="editor">
                     <div class="editor-header css-header">
                         <div>
                             <i class="fab fa-css3-alt"></i> CSS
-                            <div class="tooltip" role="tooltip" aria-label="Estilos para que tu página web se vea bonita.">
+                            <!-- Tooltip de ayuda para CSS -->
+                            <div class="tooltip" role="tooltip"
+                                aria-label="CSS se usa para dar estilo a la página web. Aquí puedes cambiar colores, fuentes, márgenes, etc.">
                                 <i class="fas fa-question-circle"></i>
-                                <span class="tooltiptext">Estilos para que tu página web se vea bonita.</span>
+                                <span class="tooltiptext">CSS se usa para dar estilo a la página web. Aquí puedes
+                                    cambiar colores, fuentes, márgenes, etc.</span>
                             </div>
                         </div>
                         <span>styles.css</span>
                     </div>
                     <div class="editor-content">
                         <div class="line-numbers" id="css-line-numbers">1</div>
-                        <textarea id="css-code" class="editor-area" placeholder="Escribe tu código CSS aquí... 
-Ejemplo:
-h1 {
-    color: navy;
-    text-align: center;
-}"></textarea>
+                        <textarea id="css-code" class="editor-area"
+                            placeholder="Escribe tu código CSS aquí..."></textarea>
                     </div>
                 </div>
                 <div class="editor">
                     <div class="editor-header js-header">
                         <div>
                             <i class="fab fa-js"></i> JavaScript
-                            <div class="tooltip" role="tooltip" aria-label="Añade interactividad a tu página web.">
+                            <!-- Tooltip de ayuda para JavaScript -->
+                            <div class="tooltip" role="tooltip"
+                                aria-label="JavaScript se usa para agregar interactividad a la página. Puedes hacer que los elementos reaccionen a eventos o cambien dinámicamente.">
                                 <i class="fas fa-question-circle"></i>
-                                <span class="tooltiptext">Añade interactividad a tu página web.</span>
+                                <span class="tooltiptext">JavaScript se usa para agregar interactividad a la página.
+                                    Puedes hacer que los elementos reaccionen a eventos o cambien dinámicamente.</span>
                             </div>
                         </div>
                         <span>script.js</span>
                     </div>
                     <div class="editor-content">
                         <div class="line-numbers" id="js-line-numbers">1</div>
-                        <textarea id="js-code" class="editor-area" placeholder="Escribe tu código JavaScript aquí... 
-Ejemplo:
-document.addEventListener('DOMContentLoaded', function() {
-    // Código aquí
-});">
-</textarea>
+                        <textarea id="js-code" class="editor-area"
+                            placeholder="Escribe tu código JavaScript aquí..."></textarea>
                     </div>
                 </div>
             </section>

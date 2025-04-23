@@ -4,31 +4,15 @@ const cssCode = document.getElementById('css-code');
 const jsCode = document.getElementById('js-code');
 const outputFrame = document.getElementById('output-frame');
 const bgColorInput = document.getElementById('bg-color');
-const fontSizeInput = document.getElementById('font-size');
-const fontSizeValue = document.getElementById('font-size-value');
 const showImageBtn = document.getElementById('show-image-btn');
 const imagePreview = document.getElementById('image-preview');
+const showColorsBtn = document.getElementById('show-colors-btn'); // Botón de colores
+const colorBar = document.getElementById('color-bar'); // Cinta de colores
 const lineNumbersContainers = {
     html: document.getElementById('html-line-numbers'),
     css: document.getElementById('css-line-numbers'),
     js: document.getElementById('js-line-numbers')
 };
-
-// Función para actualizar el tamaño de la fuente en tiempo real en los editores de código
-fontSizeInput.addEventListener('input', function () {
-    const fontSize = fontSizeInput.value + 'px';
-    fontSizeValue.textContent = fontSize;
-
-    // Cambia el tamaño de la fuente en los editores de código y los números de línea
-    const editorAreas = document.querySelectorAll('.editor-area');
-    const lineNumberAreas = document.querySelectorAll('.line-numbers');
-    editorAreas.forEach(editor => {
-        editor.style.fontSize = fontSize;
-    });
-    lineNumberAreas.forEach(lineNumber => {
-        lineNumber.style.fontSize = fontSize;
-    });
-});
 
 // Función para cambiar el color de fondo de la página
 bgColorInput.addEventListener('input', function () {
@@ -62,12 +46,20 @@ document.getElementById('run-btn').addEventListener('click', function () {
     doc.close();
 });
 
-// Función para mostrar/ocultar la imagen de la actividad
+// Función para mostrar/ocultar la imagen de la actividad y cambiar el texto del botón con icono
 showImageBtn.addEventListener('click', function () {
+    const icon = showImageBtn.querySelector('i');  // Seleccionamos el ícono dentro del botón
+
     if (imagePreview.style.display === 'none') {
         imagePreview.style.display = 'block';
+        showImageBtn.textContent = "Ocultar Actividad";  // Cambia el texto del botón
+        const iconHTML = '<i class="fas fa-eye-slash"></i>'; // Icono de ocultar
+        showImageBtn.innerHTML = iconHTML + " Ocultar Actividad"; // Actualiza el contenido del botón con el icono
     } else {
         imagePreview.style.display = 'none';
+        showImageBtn.textContent = "Ver Actividad";  // Cambia el texto del botón
+        const iconHTML = '<i class="fas fa-eye"></i>'; // Icono de ver
+        showImageBtn.innerHTML = iconHTML + " Ver Actividad"; // Actualiza el contenido del botón con el icono
     }
 });
 
@@ -100,3 +92,17 @@ window.onload = function () {
     updateLineNumbers(cssCode, lineNumbersContainers.css);
     updateLineNumbers(jsCode, lineNumbersContainers.js);
 };
+
+// Función para mostrar/ocultar la cinta de colores al hacer clic en el botón
+showColorsBtn.addEventListener('click', function () {
+    // Alternamos la visibilidad de la cinta de colores
+    colorBar.style.display = colorBar.style.display === 'none' || colorBar.style.display === '' ? 'block' : 'none';
+});
+
+// Función para aplicar el color seleccionado a fondo de la página
+const colorSwatches = document.querySelectorAll('.color-swatch');
+colorSwatches.forEach(swatch => {
+    swatch.addEventListener('click', function () {
+   
+    });
+});
