@@ -1,4 +1,4 @@
-/* ESTILOS GENERALES */
+/* --------------------------- ESTILOS GENERALES --------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -13,13 +13,13 @@ body {
     background: linear-gradient(to bottom, rgba(255, 99, 132, 0.3), rgba(54, 162, 235, 0.3), rgba(255, 159, 64, 0.3));
 }
 
-/* CINTA DE COLORES */
+/* ---------------------------- CINTA DE COLORES --------------------------- */
 .color-bar {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 20px;  /* Espacio entre la cinta y el contenido siguiente */
+    margin-bottom: 20px;
     gap: 10px;
     padding: 20px;
 }
@@ -47,21 +47,20 @@ body {
     border-color: #888;
 }
 
-/* Nombres de los colores */
 .color-swatch span {
     color: #fff;
     font-size: 12px;
     font-weight: bold;
 }
 
-/* CONTAINER */
+/* ------------------------------- CONTAINER ------------------------------ */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 15px;
 }
 
-/* HEADER */
+/* ------------------------------ HEADER ------------------------------ */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -76,7 +75,7 @@ header h1 {
     margin-bottom: 5px;
 }
 
-/* PERSONALIZACIÓN */
+/* --------------------------- PERSONALIZACIÓN -------------------------- */
 .customization {
     display: flex;
     align-items: center;
@@ -89,7 +88,7 @@ header h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* CONTENEDOR DE BOTONES */
+/* --------------------------- CONTENEDOR DE BOTONES -------------------------- */
 .button-container {
     display: flex;
     gap: 10px;
@@ -97,7 +96,7 @@ header h1 {
     flex-wrap: wrap;
 }
 
-/* BOTONES */
+/* ------------------------------ BOTONES ------------------------------ */
 button {
     border: none;
     padding: 10px 20px;
@@ -136,7 +135,12 @@ button i {
     font-size: 18px;
 }
 
-/* CONTENIDO PRINCIPAL */
+#show-colors-btn:hover {
+    background-color: #dddddd;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------- CONTENIDO PRINCIPAL ----------------------------- */
 .content {
     display: grid;
     grid-template-columns: 1fr;
@@ -149,7 +153,7 @@ button i {
     }
 }
 
-/* SECCIÓN DE RESULTADOS */
+/* -------------------------- SECCIÓN DE RESULTADOS --------------------------- */
 .output-container {
     display: flex;
     flex-direction: column;
@@ -180,7 +184,7 @@ button i {
     background-color: white;
 }
 
-/* PREVISUALIZACIÓN DE IMAGEN */
+/* --------------------- PREVISUALIZACIÓN DE IMAGEN --------------------- */
 #image-preview {
     padding: 15px;
     background-color: white;
@@ -197,7 +201,7 @@ button i {
     border: 3px solid #f0f0f0;
 }
 
-/* EDICIÓN DE CÓDIGO */
+/* ---------------------------- EDICIÓN DE CÓDIGO ---------------------------- */
 .editors-container {
     display: flex;
     flex-direction: column;
@@ -206,7 +210,7 @@ button i {
 
 .editor {
     border-radius: 10px;
-    overflow: hidden;  /* Esto asegura que no haya barras de desplazamiento en el contenedor */
+    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -236,10 +240,10 @@ button i {
     display: flex;
     background-color: #1e1e1e;
     min-height: 150px;
-    overflow: hidden;  /* Esto elimina la barra de desplazamiento */
+    overflow: hidden;
 }
 
-/* NÚMEROS DE LÍNEAS EN EL EDITOR */
+/* ---------------------------- NÚMEROS DE LÍNEAS EN EL EDITOR ---------------------------- */
 .line-numbers {
     padding: 10px 8px;
     color: #858585;
@@ -250,8 +254,8 @@ button i {
     min-width: 40px;
     font-family: 'Consolas', 'Courier New', monospace;
     line-height: 1.5;
-    font-size: 14px;  /* Asegura que el tamaño de letra de los números sea el mismo que el código */
-    overflow: hidden;  /* Esto elimina cualquier barra de desplazamiento del área de números de línea */
+    font-size: 14px;
+    overflow: hidden;
 }
 
 .editor-area {
@@ -264,16 +268,18 @@ button i {
     min-height: 150px;
     outline: none;
     font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 14px;  /* Tamaño de letra del código */
+    font-size: 14px;
     line-height: 1.5;
-    overflow: hidden;  /* Esto asegura que no haya barras de desplazamiento */
-    resize: none; /* Esto elimina el control para redimensionar */
+    overflow: hidden;
+    resize: none;
 }
 
-/* PIE DE PÁGINA */
+/* ------------------------------- PIE DE PÁGINA ------------------------------- */
 .footer {
+    
     text-align: center;
-    margin-top: 20px;
+    
+    margin-top: 55px;
     padding: 15px;
     color: #444;
     background-color: #e8f4ff;
@@ -281,13 +287,13 @@ button i {
     font-weight: 500;
 }
 
-/* ÍCONOS PARA LOS BOTONES Y ENCABEZADOS */
+/* ------------------------- ÍCONOS PARA LOS BOTONES Y ENCABEZADOS ------------------------- */
 .icon {
     font-size: 18px;
     margin-right: 10px;
 }
 
-/* TOOLTIP DE AYUDA */
+/* ------------------------------- TOOLTIP DE AYUDA ------------------------------- */
 .tooltip {
     position: absolute;
     display: inline-block;
@@ -319,7 +325,7 @@ button i {
     opacity: 1;
 }
 
-/* ESTILOS RESPONSIVOS */
+/* ----------------------------- ESTILOS RESPONSIVOS ----------------------------- */
 @media (max-width: 767px) {
     .customization {
         flex-direction: column;
@@ -346,4 +352,107 @@ button i {
     .line-numbers {
         font-size: 12px;
     }
+}
+
+/* ----------------------------- INTERRUPTOR DE MODO OSCURO ----------------------------- */
+.dark-mode-toggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+.dark-mode-toggle label {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.dark-mode-toggle .toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle .toggle:before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked + .toggle {
+    background-color: #4e4e4e;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked + .toggle:before {
+    left: 34px;
+}
+
+/* Íconos de sol y luna */
+.dark-mode-toggle #light-icon,
+.dark-mode-toggle #dark-icon {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.dark-mode-toggle #light-icon {
+    left: 8px;
+    opacity: 1;  /* Sol visible cuando está en modo claro */
+}
+
+.dark-mode-toggle #dark-icon {
+    right: 8px;
+    opacity: 0;  /* Luna invisible cuando está en modo claro */
+}
+
+/* Cuando el modo oscuro está activado, el ícono de la luna se vuelve visible */
+.dark-mode-toggle input[type="checkbox"]:checked ~ .toggle #light-icon {
+    opacity: 0;  /* Ocultar el sol */
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked ~ .toggle #dark-icon {
+    opacity: 1;  /* Mostrar la luna */
+}
+
+/* --------------------------- ESTILOS PARA EL MODO OSCURO --------------------------- */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .editor-area {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+body.dark-mode .line-numbers {
+    color: #aaa;
 }

@@ -1,25 +1,34 @@
-// Variables para los editores de código
+// ==========================
+// 1. VARIABLES DE ELEMENTOS
+// ==========================
+
+// Editores de código (HTML, CSS, JS)
 const htmlCode = document.getElementById('html-code');
 const cssCode = document.getElementById('css-code');
 const jsCode = document.getElementById('js-code');
+
+// Elementos de la vista previa
 const outputFrame = document.getElementById('output-frame');
-const bgColorInput = document.getElementById('bg-color');
+
+// Botones para mostrar/ocultar elementos
 const showImageBtn = document.getElementById('show-image-btn');
+const showColorsBtn = document.getElementById('show-colors-btn');
+
+// Elementos para la visualización de la imagen y la cinta de colores
 const imagePreview = document.getElementById('image-preview');
-const showColorsBtn = document.getElementById('show-colors-btn'); // Botón de colores
-const colorBar = document.getElementById('color-bar'); // Cinta de colores
+const colorBar = document.getElementById('color-bar');
+
+// Contenedores para los números de línea en cada editor
 const lineNumbersContainers = {
     html: document.getElementById('html-line-numbers'),
     css: document.getElementById('css-line-numbers'),
     js: document.getElementById('js-line-numbers')
 };
 
-// Función para cambiar el color de fondo de la página
-bgColorInput.addEventListener('input', function () {
-    document.body.style.backgroundColor = bgColorInput.value;
-});
+// ==========================
+// 2. EJECUCIÓN DEL CÓDIGO
+// ==========================
 
-// Función para ejecutar el código y actualizar la vista previa en el iframe
 document.getElementById('run-btn').addEventListener('click', function () {
     const htmlContent = htmlCode.value;
     const cssContent = cssCode.value;
@@ -46,24 +55,32 @@ document.getElementById('run-btn').addEventListener('click', function () {
     doc.close();
 });
 
-// Función para mostrar/ocultar la imagen de la actividad y cambiar el texto del botón con icono
+// ==========================
+// 3. MOSTRAR/OCULTAR IMAGEN DE LA ACTIVIDAD
+// ==========================
+
 showImageBtn.addEventListener('click', function () {
     const icon = showImageBtn.querySelector('i');  // Seleccionamos el ícono dentro del botón
 
+    // Alterna la visibilidad de la imagen de la actividad y cambia el texto del botón
     if (imagePreview.style.display === 'none') {
         imagePreview.style.display = 'block';
-        showImageBtn.textContent = "Ocultar Actividad";  // Cambia el texto del botón
+        showImageBtn.textContent = "Ocultar Actividad";
         const iconHTML = '<i class="fas fa-eye-slash"></i>'; // Icono de ocultar
-        showImageBtn.innerHTML = iconHTML + " Ocultar Actividad"; // Actualiza el contenido del botón con el icono
+        showImageBtn.innerHTML = iconHTML + " Ocultar Actividad";
     } else {
         imagePreview.style.display = 'none';
-        showImageBtn.textContent = "Ver Actividad";  // Cambia el texto del botón
+        showImageBtn.textContent = "Ver Actividad";
         const iconHTML = '<i class="fas fa-eye"></i>'; // Icono de ver
-        showImageBtn.innerHTML = iconHTML + " Ver Actividad"; // Actualiza el contenido del botón con el icono
+        showImageBtn.innerHTML = iconHTML + " Ver Actividad";
     }
 });
 
-// Función para manejar los números de línea en los editores
+// ==========================
+// 4. ACTUALIZACIÓN DE LOS NÚMEROS DE LÍNEA
+// ==========================
+
+// Función para actualizar los números de línea en el editor
 function updateLineNumbers(editor, lineNumbersContainer) {
     const lines = editor.value.split('\n').length;
     let lineNumbers = '';
@@ -93,16 +110,44 @@ window.onload = function () {
     updateLineNumbers(jsCode, lineNumbersContainers.js);
 };
 
-// Función para mostrar/ocultar la cinta de colores al hacer clic en el botón
+// ==========================
+// 5. MOSTRAR/OCULTAR LA CINTA DE COLORES
+// ==========================
+
 showColorsBtn.addEventListener('click', function () {
-    // Alternamos la visibilidad de la cinta de colores
+    // Alterna la visibilidad de la cinta de colores
     colorBar.style.display = colorBar.style.display === 'none' || colorBar.style.display === '' ? 'block' : 'none';
 });
 
-// Función para aplicar el color seleccionado a fondo de la página
-const colorSwatches = document.querySelectorAll('.color-swatch');
-colorSwatches.forEach(swatch => {
-    swatch.addEventListener('click', function () {
-   
-    });
-});
+// ==========================
+// 6. MODO OSCURO
+// ==========================
+
+// Función para activar o desactivar el modo oscuro
+const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Actualiza los íconos según el estado del modo oscuro
+    const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
+    const lightIcon = document.getElementById('light-icon');
+    const darkIcon = document.getElementById('dark-icon');
+
+    if (darkModeCheckbox.checked) {
+        lightIcon.style.opacity = '0';  // Oculta el sol
+        darkIcon.style.opacity = '1';   // Muestra la luna
+    } else {
+        lightIcon.style.opacity = '1';  // Muestra el sol
+        darkIcon.style.opacity = '0';   // Oculta la luna
+    }
+};
+
+// Agrega el evento al interruptor de modo oscuro
+const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
+darkModeCheckbox.addEventListener('change', toggleDarkMode);
+
+// Inicializa el modo oscuro según el estado del checkbox
+window.onload = function () {
+    if (darkModeCheckbox.checked) {
+        toggleDarkMode();  // Aplica el modo oscuro si está activado
+    }
+};
